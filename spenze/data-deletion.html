@@ -25,14 +25,12 @@
     }
     .logo {
       width: 56px; height: 56px;
-      background: #007A55;
       border-radius: 14px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
+      display: inline-block;
       margin-bottom: 20px;
+      overflow: hidden;
     }
+    .logo img { width: 56px; height: 56px; display: block; }
     h1 { font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
     .subtitle { color: #666; font-size: 0.95rem; margin-bottom: 32px; }
     h2 { font-size: 1rem; font-weight: 700; color: #1a1a1a; margin: 28px 0 12px; }
@@ -91,7 +89,7 @@
 </head>
 <body>
   <div class="card">
-    <div class="logo">💰</div>
+    <div class="logo"><img src="icon.png" alt="Spenze" /></div>
     <h1>Data Deletion — Spenze</h1>
     <p class="subtitle">How to delete your account and personal data from Spenze</p>
 
