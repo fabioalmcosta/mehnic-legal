@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,47 +8,73 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      color: #1a1a1a;
+      background: #f7f8fa;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+    }
+    .card {
       background: #fff;
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 60px 24px 80px;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 48px 40px;
+      max-width: 520px;
+      width: 100%;
       text-align: center;
     }
-    h1 { font-size: 2rem; color: #007A55; margin-bottom: 8px; }
-    p.sub { color: #666; margin-bottom: 48px; }
-    .app-section h2 { font-size: 1.25rem; margin-bottom: 16px; color: #1a1a1a; }
-    .links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
-    .links a {
-      display: inline-block;
-      padding: 12px 24px;
-      background: #007A55;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
+    h1 { font-size: 1.8rem; color: #007A55; font-weight: 700; margin-bottom: 8px; }
+    .subtitle { color: #666; font-size: 0.95rem; margin-bottom: 40px; }
+    .section-label {
+      font-size: 0.75rem;
       font-weight: 600;
-      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #999;
+      margin-bottom: 14px;
+      text-align: left;
     }
-    .links a:hover { background: #005c40; }
-    footer { margin-top: 60px; font-size: 0.85rem; color: #aaa; border-top: 1px solid #eee; padding-top: 20px; }
+    .app-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #f7f8fa;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      text-decoration: none;
+      color: #1a1a1a;
+      border: 1.5px solid #eee;
+      transition: border-color 0.15s, background 0.15s, transform 0.1s;
+    }
+    .app-card:hover { border-color: #007A55; background: #f0faf5; transform: translateY(-1px); }
+    .app-icon { width: 48px; height: 48px; border-radius: 12px; overflow: hidden; flex-shrink: 0; }
+    .app-icon img { width: 48px; height: 48px; display: block; }
+    .app-info { flex: 1; text-align: left; }
+    .app-name { font-weight: 700; font-size: 1rem; }
+    .app-desc { font-size: 0.82rem; color: #888; margin-top: 2px; }
+    .app-arrow { color: #007A55; font-size: 1.1rem; }
+    footer { margin-top: 36px; font-size: 0.82rem; color: #bbb; }
   </style>
 </head>
 <body>
-  <h1>Mehnic Legal</h1>
-  <p class="sub">Documentos legais dos aplicativos Mehnic · Legal documents for Mehnic apps</p>
+  <div class="card">
+    <h1>Mehnic Legal</h1>
+    <p class="subtitle">Legal documents for all Mehnic apps · Documentos legais dos apps Mehnic</p>
 
-  <div class="app-section">
-    <h2>Spenze — Personal Finance App</h2>
-    <div class="links">
-      <a href="spenze/privacy-policy-pt-BR.html">🇧🇷 Política de Privacidade</a>
-      <a href="spenze/privacy-policy-en-US.html">🇺🇸 Privacy Policy</a>
-    </div>
+    <p class="section-label">Apps</p>
+
+    <a href="spenze/" class="app-card">
+      <div class="app-icon"><img src="spenze/icon.png" alt="Spenze" /></div>
+      <div class="app-info">
+        <div class="app-name">Spenze</div>
+        <div class="app-desc">Privacy Policy &amp; Data Deletion</div>
+      </div>
+      <span class="app-arrow">→</span>
+    </a>
+
+    <footer>&copy; 2026 Mehnic. All rights reserved.</footer>
   </div>
-
-  <footer>
-    &copy; 2026 Mehnic. Todos os direitos reservados · All rights reserved.
-  </footer>
 </body>
 </html>
