@@ -15,25 +15,13 @@
       justify-content: center;
       padding: 40px 24px;
     }
-    .card {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-      padding: 48px 40px;
-      max-width: 560px;
-      width: 100%;
-    }
+    .card { background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 48px 40px; max-width: 560px; width: 100%; }
     .logo { width: 56px; height: 56px; border-radius: 14px; display: inline-block; margin-bottom: 20px; overflow: hidden; }
     .logo img { width: 56px; height: 56px; display: block; }
     h1 { font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
     .subtitle { color: #666; font-size: 0.95rem; margin-bottom: 32px; }
-    /* Language tabs */
     .tabs { display: flex; gap: 8px; margin-bottom: 28px; }
-    .tab {
-      flex: 1; padding: 10px; border-radius: 10px; border: 1.5px solid #eee;
-      background: #f7f8fa; color: #666; font-size: 0.9rem; font-weight: 600;
-      cursor: pointer; text-align: center; transition: all 0.15s;
-    }
+    .tab { flex: 1; padding: 10px; border-radius: 10px; border: 1.5px solid #eee; background: #f7f8fa; color: #666; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-align: center; transition: all 0.15s; }
     .tab.active { background: #007A55; color: #fff; border-color: #007A55; }
     .lang-block { display: none; }
     .lang-block.active { display: block; }
@@ -57,17 +45,15 @@
   <div class="card">
     <div class="logo"><img src="icon.png" alt="Spenze" /></div>
     <h1>Spenze — Data Deletion</h1>
-    <p class="subtitle">Exclusão de dados · Data Deletion</p>
+    <p class="subtitle">Exclusao de dados · Data Deletion</p>
 
     <div class="tabs">
-      <div class="tab active" onclick="setLang('en')">🇺🇸 English</div>
-      <div class="tab" onclick="setLang('pt')">🇧🇷 Português</div>
+      <div class="tab active" onclick="setLang('en', this)">English</div>
+      <div class="tab" onclick="setLang('pt', this)">Portugues</div>
     </div>
 
-    <!-- ENGLISH -->
     <div class="lang-block active" id="lang-en">
       <p>When you log in to Spenze using Facebook, we store only your <strong>name</strong> and <strong>email address</strong>. No other Facebook data is collected or stored.</p>
-
       <h2>Option 1 — Delete in the app</h2>
       <ol class="steps">
         <li><span class="step-num">1</span>Open the <strong>Spenze</strong> app</li>
@@ -76,188 +62,41 @@
         <li><span class="step-num">4</span>Tap <strong>Delete Account</strong> and confirm</li>
       </ol>
       <div class="highlight">All personal data will be <strong>permanently deleted within 30 days</strong>.</div>
-
       <h2>Option 2 — Request by email</h2>
       <p>No longer have access to the app? Send a deletion request including the email associated with your account.</p>
-      <a href="mailto:fabio.almcosta@gmail.com?subject=Data Deletion Request — Spenze&body=Hello,%0A%0APlease delete my Spenze account and all associated personal data.%0A%0AAccount email: [your email here]%0A%0AThank you." class="email-btn">✉️ Request deletion by email</a>
+      <a href="mailto:fabio.almcosta@gmail.com?subject=Data Deletion Request Spenze" class="email-btn">Request deletion by email</a>
     </div>
 
-    <!-- PORTUGUESE -->
     <div class="lang-block" id="lang-pt">
-      <p>Ao fazer login no Spenze com o Facebook, armazenamos apenas seu <strong>nome</strong> e <strong>endereço de e-mail</strong>. Nenhum outro dado do Facebook é coletado ou armazenado.</p>
-
-      <h2>Opção 1 — Excluir pelo app</h2>
+      <p>Ao fazer login no Spenze com o Facebook, armazenamos apenas seu <strong>nome</strong> e <strong>endereco de e-mail</strong>. Nenhum outro dado do Facebook e coletado ou armazenado.</p>
+      <h2>Opcao 1 - Excluir pelo app</h2>
       <ol class="steps">
         <li><span class="step-num">1</span>Abra o aplicativo <strong>Spenze</strong></li>
-        <li><span class="step-num">2</span>Acesse <strong>Configurações</strong> (navegação inferior)</li>
+        <li><span class="step-num">2</span>Acesse <strong>Configuracoes</strong> (navegacao inferior)</li>
         <li><span class="step-num">3</span>Toque em <strong>Conta</strong></li>
         <li><span class="step-num">4</span>Toque em <strong>Excluir conta</strong> e confirme</li>
       </ol>
-      <div class="highlight">Todos os dados pessoais serão <strong>excluídos permanentemente em até 30 dias</strong>.</div>
-
-      <h2>Opção 2 — Solicitação por e-mail</h2>
-      <p>Não tem mais acesso ao app? Envie uma solicitação de exclusão informando o e-mail associado à sua conta.</p>
-      <a href="mailto:fabio.almcosta@gmail.com?subject=Solicitação de Exclusão de Dados — Spenze&body=Olá,%0A%0APor favor, exclua minha conta do Spenze e todos os meus dados pessoais associados.%0A%0AE-mail da conta: [seu e-mail aqui]%0A%0AObrigado." class="email-btn">✉️ Solicitar exclusão por e-mail</a>
+      <div class="highlight">Todos os dados pessoais serao <strong>excluidos permanentemente em ate 30 dias</strong>.</div>
+      <h2>Opcao 2 - Solicitacao por e-mail</h2>
+      <p>Nao tem mais acesso ao app? Envie uma solicitacao de exclusao informando o e-mail associado a sua conta.</p>
+      <a href="mailto:fabio.almcosta@gmail.com?subject=Solicitacao de Exclusao de Dados Spenze" class="email-btn">Solicitar exclusao por e-mail</a>
     </div>
 
     <div class="divider"></div>
     <p style="font-size:0.85rem; color:#888; text-align:center;">
-      Response within 15 business days · Respondemos em até 15 dias úteis.<br/>
+      Response within 15 business days · Respondemos em ate 15 dias uteis.<br/>
       <a href="mailto:fabio.almcosta@gmail.com" style="color:#007A55;">fabio.almcosta@gmail.com</a>
     </p>
     <div class="divider"></div>
-    <p class="back"><a href="./">← Spenze Legal</a> &nbsp;·&nbsp; <a href="../">Mehnic Legal</a></p>
+    <p class="back"><a href="./">Back to Spenze Legal</a> &nbsp;·&nbsp; <a href="../">Mehnic Legal</a></p>
   </div>
-
   <script>
-    function setLang(lang) {
+    function setLang(lang, el) {
       document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
       document.querySelectorAll('.lang-block').forEach(function(b) { b.classList.remove('active'); });
       document.getElementById('lang-' + lang).classList.add('active');
-      event.target.classList.add('active');
+      el.classList.add('active');
     }
   </script>
-</body>
-</html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Deletion — Spenze</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background: #f7f8fa;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 24px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-      padding: 48px 40px;
-      max-width: 560px;
-      width: 100%;
-    }
-    .logo {
-      width: 56px; height: 56px;
-      border-radius: 14px;
-      display: inline-block;
-      margin-bottom: 20px;
-      overflow: hidden;
-    }
-    .logo img { width: 56px; height: 56px; display: block; }
-    h1 { font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
-    .subtitle { color: #666; font-size: 0.95rem; margin-bottom: 32px; }
-    h2 { font-size: 1rem; font-weight: 700; color: #1a1a1a; margin: 28px 0 12px; }
-    p { color: #444; font-size: 0.95rem; line-height: 1.7; margin-bottom: 12px; }
-    .steps { list-style: none; padding: 0; }
-    .steps li {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 12px 0;
-      border-bottom: 1px solid #f0f0f0;
-      font-size: 0.95rem;
-      color: #333;
-      line-height: 1.6;
-    }
-    .steps li:last-child { border-bottom: none; }
-    .step-num {
-      min-width: 28px; height: 28px;
-      background: #007A55;
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      font-weight: 700;
-      margin-top: 1px;
-    }
-    .highlight {
-      background: #f0faf5;
-      border-left: 4px solid #007A55;
-      padding: 14px 16px;
-      border-radius: 6px;
-      margin: 20px 0;
-      font-size: 0.95rem;
-      color: #333;
-    }
-    .highlight strong { color: #007A55; }
-    .email-btn {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 12px 24px;
-      background: #007A55;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-    .email-btn:hover { background: #005c40; }
-    .divider { height: 1px; background: #f0f0f0; margin: 28px 0; }
-    .back { font-size: 0.85rem; color: #aaa; text-align: center; }
-    .back a { color: #007A55; text-decoration: none; }
-    .back a:hover { text-decoration: underline; }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <div class="logo"><img src="icon.png" alt="Spenze" /></div>
-    <h1>Data Deletion — Spenze</h1>
-    <p class="subtitle">How to delete your account and personal data from Spenze</p>
-
-    <p>When you log in to Spenze using Facebook, we store only your <strong>name</strong> and <strong>email address</strong> to create your account. No other Facebook data is collected or stored.</p>
-
-    <h2>Option 1 — Delete directly in the app</h2>
-    <p>You can delete your account and all associated data directly from the Spenze app:</p>
-    <ol class="steps">
-      <li>
-        <span class="step-num">1</span>
-        Open the <strong>Spenze</strong> app on your device
-      </li>
-      <li>
-        <span class="step-num">2</span>
-        Go to <strong>Settings</strong> (bottom navigation)
-      </li>
-      <li>
-        <span class="step-num">3</span>
-        Tap <strong>Account</strong>
-      </li>
-      <li>
-        <span class="step-num">4</span>
-        Tap <strong>Delete Account</strong> and confirm
-      </li>
-    </ol>
-
-    <div class="highlight">
-      Your account and all personal data (transactions, budgets, preferences) will be <strong>permanently deleted within 30 days</strong>.
-    </div>
-
-    <h2>Option 2 — Request by email</h2>
-    <p>If you no longer have access to the app, send us a deletion request by email. Include the email address associated with your Spenze account.</p>
-    <a href="mailto:fabio.almcosta@gmail.com?subject=Data Deletion Request — Spenze&body=Hello,%0A%0APlease delete my Spenze account and all associated personal data.%0A%0AAccount email: [your email here]%0A%0AThank you." class="email-btn">
-      ✉️ Request deletion by email
-    </a>
-
-    <div class="divider"></div>
-
-    <p style="font-size:0.85rem; color:#888;">
-      We will process your deletion request within <strong>15 business days</strong> and send a confirmation email.
-      For questions, contact <a href="mailto:fabio.almcosta@gmail.com" style="color:#007A55;">fabio.almcosta@gmail.com</a>.
-    </p>
-
-    <div class="divider"></div>
-    <p class="back">
-      <a href="./">← Back to Spenze Legal</a> &nbsp;·&nbsp;
-      <a href="../">Mehnic Legal</a>
-    </p>
-  </div>
 </body>
 </html>
