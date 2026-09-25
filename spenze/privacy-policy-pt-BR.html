@@ -37,7 +37,7 @@
   <p class="meta">
     Aplicativo: <strong>Spenze</strong> &nbsp;|&nbsp;
     Empresa: <strong>Mehnic</strong> &nbsp;|&nbsp;
-    Última atualização: <strong>25 de abril de 2026</strong>
+    Última atualização: <strong>25 de setembro de 2026</strong>
   </p>
 
   <div class="highlight">
@@ -68,10 +68,12 @@
     <li><strong>Orçamentos</strong> — limite por categoria e período</li>
     <li><strong>Categorias personalizadas</strong> — criadas por você</li>
   </ul>
-  <p>Esses dados são armazenados em nossos servidores seguros (Azure PostgreSQL) e são <strong>visíveis apenas por você</strong>.</p>
+  <p>Esses dados são armazenados em nossos servidores seguros (PostgreSQL em VPS da Hostinger) e são <strong>visíveis apenas por você</strong>.</p>
 
   <h3>2.3 Dados de voz</h3>
-  <p>Quando você usa a funcionalidade de registro de transações por voz, o áudio é enviado ao serviço <strong>Azure Cognitive Services Speech-to-Text</strong> da Microsoft para transcrição. O áudio <strong>não é armazenado</strong> permanentemente em nossos sistemas após o processamento. O texto transcrito é então usado para extrair os dados da transação.</p>
+  <p>Quando você usa o registro por voz, o áudio é enviado à <strong>Groq</strong> para transcrição. O texto transcrito é enviado à <strong>DeepSeek</strong> para extrair os dados da transação. O Spenze não mantém uma cópia permanente do áudio após o processamento. O tratamento pelos provedores segue os termos e políticas indicados na seção 4.</p>
+
+  <p>Para chat e análises de IA, enviamos à DeepSeek a mensagem, o contexto financeiro necessário e o histórico da conversa pertinente. Imagens enviadas por você também são encaminhadas à DeepSeek. Para PDFs com texto, planilhas XLSX e arquivos TXT/CSV suportados, extraímos o conteúdo no servidor antes de enviá-lo à DeepSeek. Arquivos sem texto extraível ou não suportados são recusados; não envie informações que não deseja compartilhar com esses provedores.</p>
 
   <h3>2.4 Autenticação social</h3>
   <p>Se você fizer login com Google, Facebook ou Apple:</p>
@@ -155,10 +157,22 @@
     </thead>
     <tbody>
       <tr>
-        <td>Microsoft Azure</td>
-        <td>Hospedagem da API e banco de dados; Speech-to-Text; IA (OpenAI)</td>
-        <td>EUA / Global</td>
-        <td><a href="https://privacy.microsoft.com/pt-br/privacystatement" target="_blank">Ver</a></td>
+        <td>Hostinger</td>
+        <td>Hospedagem da API e PostgreSQL em VPS</td>
+        <td>Infraestrutura internacional</td>
+        <td><a href="https://www.hostinger.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Ver</a></td>
+      </tr>
+      <tr>
+        <td>Groq</td>
+        <td>Transcrição dos áudios enviados pelo usuário</td>
+        <td>EUA</td>
+        <td><a href="https://console.groq.com/docs/legal/customer-data-processing-addendum" target="_blank" rel="noopener noreferrer">Ver</a></td>
+      </tr>
+      <tr>
+        <td>DeepSeek</td>
+        <td>Chat, análises, imagens e interpretação de texto extraído de documentos e áudios</td>
+        <td>China</td>
+        <td><a href="https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html" target="_blank" rel="noopener noreferrer">Ver</a></td>
       </tr>
       <tr>
         <td>RevenueCat</td>
@@ -187,18 +201,18 @@
     </tbody>
   </table>
 
-  <p>Todos os fornecedores são contratados como <strong>operadores de dados</strong> e estão sujeitos a contratos de proteção de dados compatíveis com a LGPD e GDPR.</p>
+  <p>As condições de tratamento de cada fornecedor estão disponíveis nos links acima. O processamento por serviços externos pode envolver retenção conforme seus termos e configurações; não prometemos descarte imediato nos sistemas desses fornecedores.</p>
 
   <!-- 5 -->
   <h2>5. Transferência internacional de dados</h2>
-  <p>Alguns de nossos fornecedores estão localizados fora do Brasil (principalmente nos EUA). Garantimos que essa transferência ocorre com salvaguardas adequadas, como cláusulas contratuais padrão e programas de conformidade (ex: EU-U.S. Data Privacy Framework), conforme exigido pelo art. 33 da LGPD.</p>
+  <p>O uso de fornecedores externos envolve transferência internacional de dados, incluindo para os Estados Unidos e para a China no caso da DeepSeek. Consulte os termos e políticas dos fornecedores na seção 4 para informações sobre seus locais e práticas de tratamento. Para dúvidas sobre os seus dados, use o contato desta política.</p>
 
   <!-- 6 -->
   <h2>6. Por quanto tempo guardamos seus dados</h2>
   <ul>
     <li><strong>Dados da conta e transações:</strong> enquanto sua conta estiver ativa</li>
     <li><strong>Após exclusão da conta:</strong> os dados são eliminados permanentemente de nossos servidores em até <strong>30 dias</strong></li>
-    <li><strong>Áudio de voz:</strong> não armazenado — processado em tempo real e descartado</li>
+    <li><strong>Áudio de voz:</strong> não mantemos cópia permanente após a transcrição; o tratamento externo segue as condições dos provedores</li>
     <li><strong>Logs técnicos:</strong> até 90 dias para fins de segurança e depuração</li>
   </ul>
 
@@ -223,7 +237,7 @@
   <ul>
     <li>Comunicação criptografada via <strong>HTTPS/TLS</strong> entre o app e nossos servidores</li>
     <li>Senhas armazenadas com hash seguro (<strong>bcrypt</strong>)</li>
-    <li>Banco de dados hospedado em ambiente seguro com acesso restrito (<strong>Azure PostgreSQL</strong>)</li>
+    <li>Banco de dados hospedado em ambiente seguro com acesso restrito (<strong>PostgreSQL em VPS da Hostinger</strong>)</li>
     <li>Autenticação via tokens <strong>JWT</strong> com expiração automática</li>
     <li>Backups automáticos do banco de dados</li>
   </ul>

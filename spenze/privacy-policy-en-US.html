@@ -37,7 +37,7 @@
   <p class="meta">
     App: <strong>Spenze</strong> &nbsp;|&nbsp;
     Company: <strong>Mehnic</strong> &nbsp;|&nbsp;
-    Last updated: <strong>April 25, 2026</strong>
+    Last updated: <strong>September 25, 2026</strong>
   </p>
 
   <div class="highlight">
@@ -68,10 +68,12 @@
     <li><strong>Budgets</strong> — spending limits per category and period</li>
     <li><strong>Custom categories</strong> — created by you</li>
   </ul>
-  <p>This data is stored on our secure servers (Azure PostgreSQL) and is <strong>visible only to you</strong>.</p>
+  <p>This data is stored on our secure servers (PostgreSQL on a Hostinger VPS) and is <strong>visible only to you</strong>.</p>
 
   <h3>2.3 Voice Data</h3>
-  <p>When you use the voice transaction feature, your audio is transmitted to <strong>Microsoft Azure Cognitive Services Speech-to-Text</strong> for transcription. Audio is <strong>not permanently stored</strong> on our systems after processing. The transcribed text is then used only to extract transaction details.</p>
+  <p>When you use voice entry, audio is sent to <strong>Groq</strong> for transcription. The transcript is sent to <strong>DeepSeek</strong> to extract transaction details. Spenze does not keep a permanent copy of the audio after processing. Provider processing is governed by the terms and policies linked in section 4.</p>
+
+  <p>For AI chat and insights, we send DeepSeek your message, the necessary financial context and relevant conversation history. Images you upload are also sent to DeepSeek. For text-based PDFs, XLSX spreadsheets and supported TXT/CSV files, content is extracted on our server before being sent to DeepSeek. Unsupported files or files without extractable text are rejected; do not upload information you do not wish to share with these providers.</p>
 
   <h3>2.4 Social Authentication</h3>
   <p>If you sign in with Google, Facebook, or Apple:</p>
@@ -162,10 +164,22 @@
     </thead>
     <tbody>
       <tr>
-        <td>Microsoft Azure</td>
-        <td>API hosting, database (PostgreSQL), Speech-to-Text, OpenAI (AI features)</td>
-        <td>USA / Global</td>
-        <td><a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank">View</a></td>
+        <td>Hostinger</td>
+        <td>API and PostgreSQL hosting on a VPS</td>
+        <td>International infrastructure</td>
+        <td><a href="https://www.hostinger.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">View</a></td>
+      </tr>
+      <tr>
+        <td>Groq</td>
+        <td>Transcription of user-submitted audio</td>
+        <td>USA</td>
+        <td><a href="https://console.groq.com/docs/legal/customer-data-processing-addendum" target="_blank" rel="noopener noreferrer">View</a></td>
+      </tr>
+      <tr>
+        <td>DeepSeek</td>
+        <td>Chat, insights, images and interpretation of text extracted from documents and audio</td>
+        <td>China</td>
+        <td><a href="https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html" target="_blank" rel="noopener noreferrer">View</a></td>
       </tr>
       <tr>
         <td>RevenueCat</td>
@@ -194,18 +208,18 @@
     </tbody>
   </table>
 
-  <p>All providers act as <strong>data processors</strong> under contracts that include appropriate data protection clauses compliant with LGPD, GDPR, and applicable laws.</p>
+  <p>Each provider's processing terms are available through the links above. External services may retain data according to their terms and settings; we do not promise immediate deletion from those providers' systems.</p>
 
   <!-- 5 -->
   <h2>5. International Data Transfers</h2>
-  <p>Some of our providers are located outside Brazil and the European Union (primarily in the United States). We ensure such transfers are made with adequate safeguards, including Standard Contractual Clauses (SCCs) and compliance programs (e.g., EU–U.S. Data Privacy Framework), as required by LGPD Art. 33 and GDPR Chapter V.</p>
+  <p>Using external providers involves international data transfers, including to the United States and, for DeepSeek, China. Consult the provider terms and policies in section 4 for information about their processing locations and practices. Contact us using the details in this policy with questions about your data.</p>
 
   <!-- 6 -->
   <h2>6. Data Retention</h2>
   <ul>
     <li><strong>Account data and transactions:</strong> retained while your account is active</li>
     <li><strong>After account deletion:</strong> all personal data is permanently deleted from our servers within <strong>30 days</strong></li>
-    <li><strong>Voice audio:</strong> not stored — processed in real-time and immediately discarded</li>
+    <li><strong>Voice audio:</strong> we do not keep a permanent copy after transcription; external processing follows provider terms</li>
     <li><strong>Technical logs:</strong> up to 90 days for security and debugging purposes</li>
     <li><strong>Legal obligations:</strong> some data may be retained longer if required by applicable law</li>
   </ul>
@@ -243,9 +257,9 @@
   <ul>
     <li>All communication encrypted via <strong>HTTPS/TLS</strong></li>
     <li>Passwords stored using secure hashing (<strong>bcrypt</strong>)</li>
-    <li>Database hosted in a restricted-access environment (<strong>Azure PostgreSQL</strong>)</li>
+    <li>Database hosted in a restricted-access environment (<strong>PostgreSQL on a Hostinger VPS</strong>)</li>
     <li>Authentication via <strong>JWT tokens</strong> with automatic expiration</li>
-    <li>Automatic database backups with encryption at rest</li>
+    <li>Automatic database backups</li>
   </ul>
   <p>No system is completely immune to security threats. In the event of a data breach that affects your personal data, we will notify affected users and relevant authorities as required by applicable law.</p>
 
